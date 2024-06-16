@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web Page</title>
+  <style>
+    .container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      background: #000045;
+    }
+
+    .countdown {
+      flex: 0 0 70px;
+      text-align: center;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+      overflow: auto;
+    }
+
+    .sidebar {
+      flex: 1 1 auto;
+      padding: 20px; 
+    }
+
+    .content {
+      flex: 2;
+      padding: 20px;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form input {
+      flex: 1;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+
+    .form .input-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    .form .input-group.email {
+      flex-direction: column;
+    }
+
+    .form .input-group.email input {
+      margin-bottom: 10px;
+    }
+
+    .form .checkbox-container {
+      display: flex;
+      margin-bottom: 10px;
+      flex-direction: column;
+    }
+
+    .form .checkbox-container label {
+      margin-left: 5px;
+    }
+
+    .form .checkbox-container input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    .form button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .form button:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 500px) {
+      .main {
+        flex: 1;
+        display: flex;
+        overflow: auto;
+        flex-direction: column;
+      }      
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="countdown">
+      <Countdown/>
+    </div>
+    <div class="main">
+      <div class="sidebar">
+        <Item title="Affordable protection plans" subtitle="Save up to 50% when you buy online"/>
+        <Item title="100% of covered repair costs" subtitle="Covers everything from your steering and transmission"/>
+        <Item title="Repair Anywhere" subtitle="You choose your mechanic"/>
+      </div>
+      <div class="content">
+        <div class="form">
+        <form>
+        <h2>Get a Free Quote</h2>
+          <div class="input-group">
+          <input type="text" placeholder="First Name">
+          <input type="text" placeholder="Last Name">
+          </div>
+          <div class="input-group email">
+             <input type="email" placeholder="Email">
+          </div>
+          <h2>Please Check All Boxes to Qualify</h2>
+          <div class="checkbox-container">
+            <div>
+              <input type="checkbox" id="modelYear" name="modelYear">
+              <label for="modelYear">My Vehicle's model year is 2017 or newer</label>
+            </div>
+            <div>
+              <input type="checkbox" id="lessThan" name="lessThan">
+              <label for="lessThan">My Vehicle has less than 80,000 miles</label>
+            </div>
+            <div>
+              <input type="checkbox" id="doNotLive" name="doNotLive">
+              <label for="doNotLive">I do not live in California</label>
+            </div>
+          </div>
+          <button>Learn More</button>
+        </form>
+      </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

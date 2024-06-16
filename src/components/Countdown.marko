@@ -1,0 +1,39 @@
+class {
+  onCreate() {
+    // Set the target date for the countdown timer
+    this.targetDate = new Date("2025-01-01");
+    this.state = {
+      remainingTime: this.calculateRemainingTime()
+    };
+    this.startTimer();
+  }
+
+  calculateRemainingTime() {
+    const currentDate = new Date();
+    const timeDifference = this.targetDate - currentDate;
+
+    // Calculate the remaining days, hours, minutes, and seconds
+    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+    return {
+      days,
+      hours,
+      minutes,
+      seconds
+    };
+  }
+
+  startTimer() {
+    setInterval(() => {
+      this.state.remainingTime = this.calculateRemainingTime();
+    }, 1000);
+  }
+}
+
+<div class="timer">
+  <h1>Protection that extends beyond your warranty</h1>
+  <p>${state.remainingTime.days} days, ${state.remainingTime.hours} hours, ${state.remainingTime.minutes} minutes, ${state.remainingTime.seconds} seconds</p>
+</div>
